@@ -89,16 +89,19 @@ int main()
 {
 	std::unordered_map <char, std::vector<char>> graph;
 	graph['a'] = { 'b' };
-	graph['b'] = { 'h', 'c' };
+	graph['b'] = { 'a', 'c', 'h'};
+	graph['c'] = { 'b', 'j', 'd', 'k'};
+	graph['d'] = { 'c', 'j', 'e', 'l'};
+	graph['e'] = { 'd', 'j', 'f', 'm'};
+	graph['f'] = { 'e', 'j', 'g'};
+	graph['g'] = { 'f' };
 	graph['h'] = { 'j', 'b' };
-	graph['c'] = { 'j', 'd','k' };
-	graph['j'] = { 'o', 'f','e', 'd', 'c', 'h' };
+	graph['j'] = { 'h', 'o', 'f', 'e', 'd', 'c'};
 	graph['k'] = { 'c', 'l' };
-	graph['f'] = { 'g', 'e' };
-	graph['e'] = { 'f', 'j', 'm', 'd' };
-	graph['d'] = { 'c', 'j', 'e', 'l' };
-	graph['l'] = { 'k', 'n', 'm' };
+	graph['l'] = { 'k', 'n', 'm', 'd'};
 	graph['m'] = { 'l', 'e' };
+	graph['n'] = { 'l' };
+	graph['o'] = { 'j' };
 
 	char startNode;
 	char destinationNode;
